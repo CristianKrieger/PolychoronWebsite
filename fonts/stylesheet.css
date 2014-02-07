@@ -1,32 +1,65 @@
 @font-face {
-    font-family: 'caviar_dreamsregular';
-    src: url('caviardreams-webfont.eot');
-    src: url('caviardreams-webfont.eot?#iefix') format('embedded-opentype'),
-         url('caviardreams-webfont.woff') format('woff'),
-         url('caviardreams-webfont.ttf') format('truetype'),
-         url('caviardreams-webfont.svg#caviar_dreamsregular') format('svg');
+    font-family: 'denseregular';
+    src: url('dense-regular-webfont.eot');
+    src: url('dense-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('dense-regular-webfont.woff') format('woff'),
+         url('dense-regular-webfont.ttf') format('truetype'),
+         url('dense-regular-webfont.svg#denseregular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'exoregular';
-    src: url('exo-regular-webfont.eot');
-    src: url('exo-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('exo-regular-webfont.woff') format('woff'),
-         url('exo-regular-webfont.ttf') format('truetype'),
-         url('exo-regular-webfont.svg#exoregular') format('svg');
+    font-family: 'homizio_novaregular';
+    src: url('homizio-regular-webfont.eot');
+    src: url('homizio-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('homizio-regular-webfont.woff') format('woff'),
+         url('homizio-regular-webfont.ttf') format('truetype'),
+         url('homizio-regular-webfont.svg#homizio_novaregular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'robotoregular';
-    src: url('roboto-regular-webfont.eot');
-    src: url('roboto-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('roboto-regular-webfont.woff') format('woff'),
-         url('roboto-regular-webfont.ttf') format('truetype'),
-         url('roboto-regular-webfont.svg#robotoregular') format('svg');
+    font-family: 'canterlight';
+    src: url('canter_light-webfont.eot');
+    src: url('canter_light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('canter_light-webfont.woff') format('woff'),
+         url('canter_light-webfont.ttf') format('truetype'),
+         url('canter_light-webfont.svg#canterlight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'quarkbold';
+    src: url('quark-bold-webfont.eot');
+    src: url('quark-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('quark-bold-webfont.woff') format('woff'),
+         url('quark-bold-webfont.ttf') format('truetype'),
+         url('quark-bold-webfont.svg#quarkbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'aleoregular';
+    src: url('aleo-regular-webfont.eot');
+    src: url('aleo-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('aleo-regular-webfont.woff') format('woff'),
+         url('aleo-regular-webfont.ttf') format('truetype'),
+         url('aleo-regular-webfont.svg#aleoregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'novecento_slab_widenormal';
+    src: url('Novecentoslabwide-Normal-webfont.eot');
+    src: url('Novecentoslabwide-Normal-webfont.eot?#iefix') format('embedded-opentype'),
+         url('Novecentoslabwide-Normal-webfont.woff') format('woff'),
+         url('Novecentoslabwide-Normal-webfont.ttf') format('truetype'),
+         url('Novecentoslabwide-Normal-webfont.svg#novecento_slab_widenormal') format('svg');
     font-weight: normal;
     font-style: normal;
 }

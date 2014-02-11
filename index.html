@@ -5,12 +5,24 @@
 		<link type="text/css" rel="stylesheet" href="CSS/main_stylesheet.css"/>
 		<link type="text/css" rel="stylesheet" href="fonts/stylesheet.css"/>
 		<title>Polychoron</title>
+		
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+		<script type="text/javascript" src="JavaScript/jquery.parallax-1.1.3.js"></script>
+		<script type="text/javascript" src="JavaScript/jquery.localscroll-1.2.7-min.js"></script>
+		<script type="text/javascript" src="JavaScript/jquery.scrollTo-1.4.3.1-min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+			    $('#nav').localScroll(800);
+			});
+			$('#intro').parallax("50%", 0.1);
+			$('#second').parallax("50%", 0.1);
+		</script>
 	</head>
-	<body class="content" id="skrollr-body">
+	<body class="content">
 		<div class="main_container">
 	        <object class="header" type="text/html" data="header.html"></object>
 		    <div class="content">
-		    	<div class="intro" data-0="background-position:50% 0px;" data-950="background-position:50% -180px;">
+		    	<div id="intro" class="static_bg">
 		    		<img class="intro-logo" src="images/Polychoron_logo.png"/>
 		    		<div class="strip01">
 		    			<h1 class="strip">Organización sin fines de lucro</h1>
@@ -18,15 +30,56 @@
 		    		</div>
 		    	</div>
 		    	<div class="about">
-		    		<h1>Organización sin fines de lucro</h1>
-		    		<h2>Lograr nutrir el ecosistema tecnológico mexicano apoyando a:</h2>
+		    		<h1 class="title">Uniendo al talento mexicano</h1>
+		    		<ul class="circle_list">
+		    			<li class="circle_list_item">
+		    				<img class="home_icon" src="images/icon01.png"/>
+		    			</li>
+		    			<li class="circle_list_item">
+		    				<img class="home_icon" src="images/icon02.png"/>
+		    			</li>
+		    			<li class="circle_list_item">
+		    				<img class="home_icon" src="images/icon03.png"/>
+		    			</li>
+		    			<li class="circle_list_item">
+		    				<img class="home_icon" src="images/icon04.png"/>
+		    			</li>
+		    		</ul>
+		    		<div id="default_text">
+			    		<h2 class="subtitle">Polychoron busca crear una cultura de colaboración para que empresas, universidades y nuevos emprendedores puedan lograr más.</h2>
+		    			<p class="home_content">
+		    				Queremos desarrollar un mejor México al proveer las herramientas, vincular, asesorar y apoyar a todos aquellos interesados en innovar tecnológicamente. Nuestro país puede llegar mucho más lejos si comenzamos a ayudarnos mutuamente, compartir nuestro conocimiento y trabajar juntos. Asimsimo, Polychoron promueve la integración de la tecnología con áreas cómo el diseño y los negocios para lograr el desarrollo de productos y servicios increíbles que se traduzcan en nuevas y mejores oportunidades de emprendimiento. 
+		    			</p>
+	    			</div>
+	    			<div id="technical_text" style="display:none;">
+			    		<h2 class="subtitle">Polychoron busca crear una cultura de colaboración para que empresas, universidades y nuevos emprendedores puedan lograr más.</h2>
+		    			<p class="home_content">
+		    				Queremos desarrollar un mejor México al proveer las herramientas, vincular, asesorar y apoyar a todos aquellos interesados en innovar tecnológicamente. Nuestro país puede llegar mucho más lejos si comenzamos a ayudarnos mutuamente, compartir nuestro conocimiento y trabajar juntos. 
+		    			</p>
+	    			</div>
+	    			<div id="creative_text" style="display:none;">
+			    		<h2 class="subtitle">Polychoron busca crear una cultura de colaboración para que empresas, universidades y nuevos emprendedores puedan lograr más.</h2>
+		    			<p class="home_content">
+		    				Queremos desarrollar un mejor México al proveer las herramientas, vincular, asesorar y apoyar a todos aquellos interesados en innovar tecnológicamente. Nuestro país puede llegar mucho más lejos si comenzamos a ayudarnos mutuamente, compartir nuestro conocimiento y trabajar juntos. 
+		    			</p>
+	    			</div>
+	    			<div id="business_text" style="display:none;">
+			    		<h2 class="subtitle">Polychoron busca crear una cultura de colaboración para que empresas, universidades y nuevos emprendedores puedan lograr más.</h2>
+		    			<p class="home_content">
+		    				Queremos desarrollar un mejor México al proveer las herramientas, vincular, asesorar y apoyar a todos aquellos interesados en innovar tecnológicamente. Nuestro país puede llegar mucho más lejos si comenzamos a ayudarnos mutuamente, compartir nuestro conocimiento y trabajar juntos. 
+		    			</p>
+	    			</div>
+	    			<div id="academic_text" style="display:none;">
+			    		<h2 class="subtitle">Polychoron busca crear una cultura de colaboración para que empresas, universidades y nuevos emprendedores puedan lograr más.</h2>
+		    			<p class="home_content">
+		    				Queremos desarrollar un mejor México al proveer las herramientas, vincular, asesorar y apoyar a todos aquellos interesados en innovar tecnológicamente. Nuestro país puede llegar mucho más lejos si comenzamos a ayudarnos mutuamente, compartir nuestro conocimiento y trabajar juntos. 
+		    			</p>
+	    			</div>
+		    	</div>
+		    	<div id="second" class="static_bg">
 		    	</div>
 		    </div>
 		    <object class="footer" type="text/html" data="footer.html"></object>
 	    </div>
-	    <script type="text/javascript" src="JavaScript/skrollr.min.js"></script>
-	    <script type="text/javascript">
-	    	var s = skrollr.init({forceHeight:false});
-	    </script>
   	</body>
 </html>

@@ -153,19 +153,22 @@ div.content{
 	padding-top:46px;
 }
 
-div.intro{
+div.static_bg{
 	min-height: 900px;
-	background: transparent url(../images/bg01.png) 50% 30% no-repeat;
+	background: transparent url(../images/bg01.png) 50% 0 no-repeat fixed;
 	width: 100%;
+	max-width:1920px;
+	position:relative;
 	padding:0px;
 	margin:0px;
 }
 
 img.intro-logo{
-	height:350px;
+	height:auto;
+	width:80%;
     margin-left: 50px;
     margin-top: 50px;
-	width:auto;
+	max-width:950px;
 	padding: 0px;
 }
 
@@ -174,7 +177,8 @@ div.strip01{
 	height: 293px;
 	background: transparent url(../images/strip01.png) no-repeat;
 	position: absolute;
-	bottom: 20; right: 0;
+	bottom: 35px;
+	right: 0;
 }
 
 h1.strip{
@@ -184,11 +188,36 @@ h1.strip{
 	font-size: 2rem;
 }
 
-h2{
+h2.strip{
 	margin: 20px 35px;
 	font-family: canterlight;
 	color: #eeeeee;
 	font-size: 2.3rem;
+}
+
+h1.title{
+	font-family: novecento_slab_widenormal;
+	color: #FFFFFF;
+	font-size: 2rem;
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+h2.subtitle{
+	margin-bottom: 20px;
+	font-family: aleoregular;
+	color: #eeeeee;
+	font-size: 1.6rem;
+	margin-top:10px;
+	margin-top:15px;
+	text-align: center;
+}
+
+p.home_content{
+	font-family: homizio_novaregular;
+	color: #eeeeee;
+	font-size: 1.2rem;
+	text-align: center;	
 }
 
 div.about{
@@ -196,8 +225,39 @@ div.about{
 	min-height: 500px;
 	background-color: #e0922e;
 	width: 100%;
-	padding: 65px 0px;
+	padding: 65px 10%;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;
 }
+
+ul.circle_list{
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+	text-align: center;
+	display: block;
+}
+
+li.circle_list_item{
+	padding:0px;
+	display: inline-block;
+	position: relative;
+	text-align: -webkit-match-parent;
+	text-transform: uppercase;
+	text-decoration: none;
+}
+
+img.home_icon{
+	width:200px;
+	height: auto;
+	margin: 15px;
+}
+
+#second{
+	background: transparent url(../images/bg02.jpg) 50% 0 no-repeat fixed;
+}
+
 /**
  * 	FOOTER
  */

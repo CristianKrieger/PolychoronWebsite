@@ -1,6 +1,6 @@
 *{
-	padding: 0;
-    margin: 0;
+	padding: 0px;
+    margin: 0px;
 }
 
 html, body{
@@ -156,15 +156,18 @@ p.home_content{
 	text-align: center;	
 }
 
-div.about{
+div.plain_container{
 	margin:0px;
 	min-height: 500px;
-	background-color: #e0922e;
 	width: 100%;
 	padding: 65px 10%;
 	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
 	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
 	box-sizing: border-box;
+}
+
+#about{
+	background-color: #e0922e;
 }
 
 ul.circle_list{
@@ -271,7 +274,15 @@ li.circle_list_item{
 }
 
 #second{
-	background: transparent url(../images/bg02.jpg) 50% 0 no-repeat fixed;
+	background: transparent url(../images/bg02.png) 50% 0 no-repeat fixed;
+}
+
+#video{
+	background-color: #e5b632;
+}
+
+#third{
+	background: transparent url(../images/bg03.png) 50% 0 no-repeat fixed;
 }
 
 /**

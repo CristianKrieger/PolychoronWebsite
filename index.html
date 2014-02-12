@@ -6,17 +6,92 @@
 		<link type="text/css" rel="stylesheet" href="fonts/stylesheet.css"/>
 		<title>Polychoron</title>
 		
-		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
 		<script type="text/javascript" src="JavaScript/jquery.parallax-1.1.3.js"></script>
 		<script type="text/javascript" src="JavaScript/jquery.localscroll-1.2.7-min.js"></script>
 		<script type="text/javascript" src="JavaScript/jquery.scrollTo-1.4.3.1-min.js"></script>
+		<script type="text/javascript" src="JavaScript/jquery.circlemouse.js"></script>
+		<script type="text/javascript" src="JavaScript/modernizr.custom.72835.js"></script>
+		<noscript>
+			<link rel="stylesheet" type="text/css" href="css/noscript.css" />
+		</noscript>
 		<script type="text/javascript">
 			$(document).ready(function(){
 			    $('#nav').localScroll(800);
 			});
 			$('#intro').parallax("50%", 0.1);
 			$('#second').parallax("50%", 0.1);
+			
+			$("div").hover(function(){
+				if (!$(this).hasClass('animated')) {
+					$(this).dequeue().stop().animate({ width: "200px" });
+				}
+			}, function() {
+			    $(this).addClass('animated').animate({ width: "100px" }, "normal", "linear", function() {
+					$(this).removeClass('animated').dequeue();
+				});
+			});
 		</script>
+		<script type="text/javascript">
+			var currentText='#default_text';
+            $(function() {
+				$('#circle1').circlemouse({
+					onMouseEnter: function(el) {
+						el.addClass('ec-circle-hover');
+					},
+					onMouseLeave: function(el) {
+						el.removeClass('ec-circle-hover');
+					},
+					onClick: function(el) {
+						toggleText(currentText, '#technical_text');
+					}
+				});
+				$('#circle2').circlemouse({
+					onMouseEnter: function(el) {
+						el.addClass('ec-circle-hover');
+					},
+					onMouseLeave: function(el) {
+						el.removeClass('ec-circle-hover');
+					},
+					onClick: function(el) {
+						toggleText(currentText, '#creative_text');
+					}
+				});
+				$('#circle3').circlemouse({
+					onMouseEnter: function(el) {
+						el.addClass('ec-circle-hover');
+					},
+					onMouseLeave: function(el) {
+						el.removeClass('ec-circle-hover');
+					},
+					onClick: function(el) {
+						toggleText(currentText, '#business_text');
+					}
+				});
+				$('#circle4').circlemouse({
+					onMouseEnter: function(el) {
+						el.addClass('ec-circle-hover');
+					},
+					onMouseLeave: function(el) {
+						el.removeClass('ec-circle-hover');
+					},
+					onClick: function(el) {
+						toggleText(currentText, '#academic_text');
+					}
+				});
+			});
+			function toggleText(current, id){
+				if(window.current===undefined){
+					window.current='#default_text';
+				}
+				$(window.current).hide("fast");
+				if(window.current===id){
+					id='#default_text';
+				}
+				$(id).show("slow");
+				window.current=id;
+			}
+        </script>
 	</head>
 	<body class="content">
 		<div class="main_container">
@@ -25,54 +100,62 @@
 		    	<div id="intro" class="static_bg">
 		    		<img class="intro-logo" src="images/Polychoron_logo.png"/>
 		    		<div class="strip01">
-		    			<h1 class="strip">Organización sin fines de lucro</h1>
-		    			<h2 class="strip">Enfocada a mejorar las condiciones tecnológicas de México<br>a través de innovación colectiva y el desarrollo de redes de <br>profesionales.</h2>
+		    			<h1 class="strip">Org. sin fines de lucro</h1>
+		    			<h2 class="strip">Enfocada a mejorar las condiciones tecnológicas de México a través de innovación colectiva y el desarrollo de redes de profesionales.</h2>
 		    		</div>
 		    	</div>
 		    	<div class="about">
 		    		<h1 class="title">Uniendo al talento mexicano</h1>
 		    		<ul class="circle_list">
 		    			<li class="circle_list_item">
-		    				<img class="home_icon" src="images/icon01.png"/>
+		    				<a id="circle1" class="ec-circle">
+							<h3>Ingenieros</h3>
+							</a>
 		    			</li>
 		    			<li class="circle_list_item">
-		    				<img class="home_icon" src="images/icon02.png"/>
+		    				<a id="circle2" class="ec-circle">
+							<h3>Diseñadores</h3>
+							</a>
 		    			</li>
 		    			<li class="circle_list_item">
-		    				<img class="home_icon" src="images/icon03.png"/>
+		    				<a id="circle3" class="ec-circle">
+							<h3>Empresarios</h3>
+							</a>
 		    			</li>
 		    			<li class="circle_list_item">
-		    				<img class="home_icon" src="images/icon04.png"/>
+		    				<a id="circle4" class="ec-circle">
+							<h3>Académicos</h3>
+							</a>
 		    			</li>
 		    		</ul>
-		    		<div id="default_text">
+		    		<div id="default_text" style="display:block;">
 			    		<h2 class="subtitle">Polychoron busca crear una cultura de colaboración para que empresas, universidades y nuevos emprendedores puedan lograr más.</h2>
 		    			<p class="home_content">
 		    				Queremos desarrollar un mejor México al proveer las herramientas, vincular, asesorar y apoyar a todos aquellos interesados en innovar tecnológicamente. Nuestro país puede llegar mucho más lejos si comenzamos a ayudarnos mutuamente, compartir nuestro conocimiento y trabajar juntos. Asimsimo, Polychoron promueve la integración de la tecnología con áreas cómo el diseño y los negocios para lograr el desarrollo de productos y servicios increíbles que se traduzcan en nuevas y mejores oportunidades de emprendimiento. 
 		    			</p>
 	    			</div>
 	    			<div id="technical_text" style="display:none;">
-			    		<h2 class="subtitle">Polychoron busca crear una cultura de colaboración para que empresas, universidades y nuevos emprendedores puedan lograr más.</h2>
+			    		<h2 class="subtitle">Haciendo que la magia suceda</h2>
 		    			<p class="home_content">
-		    				Queremos desarrollar un mejor México al proveer las herramientas, vincular, asesorar y apoyar a todos aquellos interesados en innovar tecnológicamente. Nuestro país puede llegar mucho más lejos si comenzamos a ayudarnos mutuamente, compartir nuestro conocimiento y trabajar juntos. 
+		    				Polychoron sabe que el núcleo de la tecnología está en los ingenieros, inventores, programadores, técnicos, profesionistas, investigadores y empresas que la materilizan. Por ello, buscamos a cualquier desarrollador de tecnología en las áreas de electrónica, software, mecánica y mecatrónica interesado en construir un mejor futuro para proveerle el apoyo que necesita.   
 		    			</p>
 	    			</div>
 	    			<div id="creative_text" style="display:none;">
-			    		<h2 class="subtitle">Polychoron busca crear una cultura de colaboración para que empresas, universidades y nuevos emprendedores puedan lograr más.</h2>
+			    		<h2 class="subtitle">Experiencia de usuario como pilar para el éxito</h2>
 		    			<p class="home_content">
-		    				Queremos desarrollar un mejor México al proveer las herramientas, vincular, asesorar y apoyar a todos aquellos interesados en innovar tecnológicamente. Nuestro país puede llegar mucho más lejos si comenzamos a ayudarnos mutuamente, compartir nuestro conocimiento y trabajar juntos. 
+		    				Sabemos que el desarrollo de un producto exitoso no necesariamente está ligado a su excelente funcionalidad y sus capacidades técnicas, sino a un factor de estética y ergonomía que lo haga atractivo al usuario y fácil de adoptar; por ello, un diseñador es una gran adición a cualquier equipo de innovación tecnológica. 
 		    			</p>
 	    			</div>
 	    			<div id="business_text" style="display:none;">
-			    		<h2 class="subtitle">Polychoron busca crear una cultura de colaboración para que empresas, universidades y nuevos emprendedores puedan lograr más.</h2>
+			    		<h2 class="subtitle">Transformar productos en oportunidades de negocio</h2>
 		    			<p class="home_content">
-		    				Queremos desarrollar un mejor México al proveer las herramientas, vincular, asesorar y apoyar a todos aquellos interesados en innovar tecnológicamente. Nuestro país puede llegar mucho más lejos si comenzamos a ayudarnos mutuamente, compartir nuestro conocimiento y trabajar juntos. 
+		    				Más allá de lograr innovar y construir productos increíbles, es necesario poder comercializarlos. Pero además, es importante saber administrar una empresa, implementar estrategías de marketing, crear alianzas y muchas otras cosas ajenas al mundo del desarrollo tecnológico. Por ello, Polychoron incluye dentro de su red a emprendedores, empresarios, mentores, inversionistas, administradores, contadores o cualquier persona interesada en apoyar o incluirse en proyectos de emprendimiento tecnológico.
 		    			</p>
 	    			</div>
 	    			<div id="academic_text" style="display:none;">
-			    		<h2 class="subtitle">Polychoron busca crear una cultura de colaboración para que empresas, universidades y nuevos emprendedores puedan lograr más.</h2>
+			    		<h2 class="subtitle">Ciencia y teoría para una mejor tecnología</h2>
 		    			<p class="home_content">
-		    				Queremos desarrollar un mejor México al proveer las herramientas, vincular, asesorar y apoyar a todos aquellos interesados en innovar tecnológicamente. Nuestro país puede llegar mucho más lejos si comenzamos a ayudarnos mutuamente, compartir nuestro conocimiento y trabajar juntos. 
+		    				La academia siempre será una importante aliada para la mejora de tecnología, el desarrollo de ciencia, la formación de profesionistas y el fomento de emprendedores. Polychoron busca apoyar a universidades para lograr estos cometidos, pero también para localizar e impulsar al talento estudiantil y convertir los resultados de investigaciones y proyectos en aplicaciones tecnológicas innovadoras.
 		    			</p>
 	    			</div>
 		    	</div>

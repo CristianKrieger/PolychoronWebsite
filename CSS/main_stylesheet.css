@@ -219,7 +219,7 @@ li.circle_list_item{
 	-ms-transition: box-shadow 400ms ease-in-out;
 	transition: box-shadow 400ms ease-in-out;
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
-	display: block;
+	display: table;
 	outline: none;
 }
 .ec-circle-hover{
@@ -237,11 +237,6 @@ li.circle_list_item{
 
 .ec-circle h3{
 	z-index:50;
-	float:left;
-	width:100%;
-	position: absolute;
-	top:95px;
-	left: 0px;
 	color: transparent;
     font-family: canterlight;
 	font-size: 2.5rem;
@@ -252,6 +247,8 @@ li.circle_list_item{
 	-o-transition: text-shadow 400ms ease-in-out;
 	-ms-transition: text-shadow 400ms ease-in-out;
 	transition: text-shadow 400ms ease-in-out;
+	display: table-cell; 
+  	vertical-align: middle; 
 }
 .ec-circle-hover h3{
 	text-shadow: 0px 0px 1px #fff;
@@ -275,32 +272,115 @@ li.circle_list_item{
 
 #second{
 	background: transparent url(../images/bg02.png) 50% 0 no-repeat fixed;
-	max-height: 1080px;
-	min-height: 600px;
-	overflow:auto;
-	width: 100%;
-	max-width:1920px;
-	position:relative;
-	padding: 65px 10%;
-	margin:0px;
+}
+
+#objectives{
+	background-color: #e5b632;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+div.objective_container{
+	min-width: 600px;
+	max-width: 1000px;
+	width:100%;
+	margin-left: auto;
+	margin-right: auto;
+	height: 700px;
+	position: relative;
+}
+
+img.small_logo{
+	width: auto;
+	top: 50%;
+	margin-top: -75px;
+	left: 50%;	
+  	margin-left: -94.5px;
+	height: 150px;
+	position: absolute;
+	z-index: 1;
+}
+
+div.circle_obj_item{
+	padding:0px;
+	position: absolute;
+	text-transform: uppercase;
+	text-decoration: none;
 	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
 	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
 	box-sizing: border-box;
+	position: absolute;
+	z-index: 2;
+	top: 50%;
+	left: 50%;
+	text-align: center;
+	display: table;
 }
 
-h1.image_title{
-	font-family: novecento_slab_widenormal;
-	color: #FFFFFF;
-	font-size: 2rem;
-	text-align: center;
+#circle_obj_container_1{
+	margin-left: -350px;
+	margin-top: -100px;
+}
+
+#circle_obj_1{
+	background: transparent url(../images/objetive-icon01.png) no-repeat center center;
+}
+
+#circle_obj_container_2{
+  	margin-left: -225px;
+  	margin-top: -317px;
+}
+
+#circle_obj_2{
+	background: transparent url(../images/objetive-icon02.png) no-repeat center center;
+}
+
+#circle_obj_container_3{
+	margin-left: 25px;
+	margin-top: -317px;
+}
+
+#circle_obj_3{
+	background: transparent url(../images/objetive-icon03.png) no-repeat center center;
+}
+
+#circle_obj_container_4{
+	margin-left: 150px;
+	margin-top: -100px;
+}
+
+#circle_obj_4{
+	background: transparent url(../images/objetive-icon04.png) no-repeat center center;
+}
+
+#circle_obj_container_5{
+	margin-left: 25px;
+	margin-top: 117px;
+}
+
+#circle_obj_5{
+	background: transparent url(../images/objetive-icon05.png) no-repeat center center;
+}
+
+#circle_obj_container_6{
+	margin-left: -225px;
+	margin-top: 117px;
+}
+
+#circle_obj_6{
+	background: transparent url(../images/objetive-icon06.png) no-repeat center center;
 }
 
 #video{
-	background-color: #e5b632;
+	background-color: #32a4e5;
 }
 
 #third{
 	background: transparent url(../images/bg03.png) 50% 0 no-repeat fixed;
+}
+
+#fourth{
+	background: transparent url(../images/bg04.png) 50% 0 no-repeat fixed;
 }
 
 /**
@@ -308,9 +388,8 @@ h1.image_title{
  */
 
 object.footer {
-	min-width: 800px;
 	width:100%;
-	background-color:#5785bb;
+	background-color:#3d347e;
 	overflow:hidden;
 	margin:0px;
 }
@@ -319,7 +398,7 @@ div.footer{
 	text-align: center;
 	padding-top: 7px;
 	padding-bottom:7px;
-	width: 800px;
+	width: 100%;
   	margin-left: auto;
   	margin-right: auto;
 }

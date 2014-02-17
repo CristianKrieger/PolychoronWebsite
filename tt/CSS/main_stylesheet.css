@@ -1,0 +1,147 @@
+*{
+	padding: 0px;
+    margin: 0px;
+}
+
+html, body{
+	height: 100%;
+   	margin: 0px;
+}
+
+body.content{
+	background: #696969;
+}
+
+div.main_container{
+    max-width: 1920px;
+    min-width: 700px;
+}
+
+div{
+	display: block;
+}
+
+iframe.header {
+	min-width: 800px;
+	width:100%;
+	height:57px;
+	top:0;
+	left:0;
+	position:fixed;
+	z-index:100;
+	background-color:transparent;
+}
+
+div.nav_bar_bg{
+	background-color:rgba(255, 255, 255, 0.5);
+	width:100%;
+}
+
+div.nav_bar{
+  	margin-left: auto;
+  	margin-right: auto;
+	height:57px;
+	text-align:center;
+	display:block;
+}
+
+ul.nav_list{
+	list-style-type:none;
+	padding:0px;
+}
+
+li.nav_item{
+	display:inline;
+}
+
+a.nav_link:link, a.nav_link:visited{
+	border-right: 1px solid rgba(0, 0, 0, 0.1);
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: rgba(0, 0, 0, 0.0980392);
+	box-shadow: 1px 0 0 rgba(255, 255, 255, 0.11);
+	padding-top: 15px;
+	padding-right: 27px;
+	padding-bottom: 15px;
+	padding-left: 27px;
+	color: #000000;
+	font-size: 18px;
+	font-weight: normal;
+	text-decoration: none;
+	font-style: normal !important;
+	display: inline-block;
+	height: 27px;
+	white-space: nowrap;
+	font-family:quarkbold;
+}
+
+#first_nav_link{
+	border-left: 1px solid rgba(0, 0, 0, 0.1);
+	border-left-width: 1px;
+	border-left-style: solid;
+	border-left-color: rgba(0, 0, 0, 0.0980392);
+}
+
+a.nav_link:hover, a.nav_link:active{
+	-webkit-transition: all 0.2s ease-out;
+	-webkit-transition-property: all;
+	-webkit-transition-duration: 0.2s;
+	-webkit-transition-timing-function: ease-out;
+	-webkit-transition-delay: initial;
+	-moz-transition: all 0.2s ease-out;
+	-ms-transition: all 0.2s ease-out;
+	-o-transition: all 0.2s ease-out;
+	color: #000000;
+	text-decoration: none;
+	background-color:rgba(255, 255, 255, 0.5);
+}
+
+/**
+ * 	CONTENT
+ */
+
+div.content-wrapper{
+	
+}
+
+div.parallax_div{
+	min-height: 700px;
+	width: 100%;
+	max-width:1920px;
+	position:relative;
+	padding: 5%;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;
+}
+
+#first{
+	background: transparent url(../images/bg01.png) 50% 0 no-repeat fixed;
+}
+
+div.thunder-logo-container{
+	margin: 57px auto 0px;
+	display:block;
+	text-align: center;
+}
+
+img.thundertrials-logo{
+	width: 300px;
+	height: auto;
+	display:block;
+	margin: 0 auto;
+}
+
+h1.thundertrials-title{
+	font-family:franchiseregular;
+	font-size: 4rem;
+	margin:0px;
+	color:#000000;
+}
+
+h2.thundertrials-subtitle{
+	font-family:franchiseregular;
+	margin:0px;
+	font-size: 3.5rem;
+	color:#000000;
+}

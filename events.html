@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<link type="text/css" rel="stylesheet" href="CSS/main_stylesheet.css"/>
+		<link type="text/css" rel="stylesheet" href="fonts/stylesheet.css"/>
+		<title>Eventos</title>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(window).resize(videoSectionResize);
+			$(document).ready(videoSectionResize);
+			
+			function videoSectionResize() {
+				var windowSizeThreshold = 1024;
+				if($(window).width()>windowSizeThreshold){
+				    var windowWidthVideo = 0.35;
+				    var windowWidthDescription = 1-windowWidthVideo-0.05; 
+			    	var containerWidth=$('.events-thunder').width();
+			    	var videoWidth=containerWidth * windowWidthVideo;
+			        $('.thunder-logo-container').css({	width: videoWidth,
+			        							float: "left",
+			        							marginRight: "30px"});
+			        $('.thunder-side-description').css({width: containerWidth*windowWidthDescription-2});
+			   }else{
+			    	var containerWidth=$('.events-thunde').width();
+			        $('.thunder-logo-container').css({	width: containerWidth,
+			        							float: "none",
+			        							marginLeft: "auto",
+			        							marginBottom: "30px",
+			        							marginRight: "auto"});
+			        $('.thunder-side-description').css({width: "100%"});
+			   }
+			}
+		</script>
+	</head>
+	<body class="content">
+		<div class="main_container">
+	        <iframe class="header" src="header.html" frameborder="0"></iframe>
+		    <div class="content">
+		    	<div class="event-banner">
+		    		<h1 class="title banner-title">Eventos</h1>
+		    	</div>
+		    	<div class="events-thunder">
+		    		<div class="thunder-logo-container">
+		    			<img class="thundertrials-logo" src="images/thunder-trials-logo.png"/>
+			    		<h1 class="title thundertrials-title">THUNDER TRIALS</h1>
+			    		<h2 class="subtitle thundertrials-subtitle">ENERO-MAYO 2014</h2>
+		    		</div>
+		    		<div class="thunder-side-description">
+		    			<p class="black-text">Thunder Trials es una iniciativa de Polychoron para fomentar y dar las herramientas necesarias para emprender en áreas tecnológicas, con un modelo diferente a los tradicionales bootcamps y eventos con pocos resultados. El concurso está basado en el desarrollo de un producto mínimo viable para el mercado y se han incluido conferencias y talleres que permitan a los asistentes acercarse a emprendedores reconocidos que quieren compartir sus experiencias y consejos para acercarse al éxito.</p>
+		    			<h2 class="small-subtitle">Para más información, visite:</h2>
+		    			<a class="dark-link" href="tt/">Sitio de los Thunder Trials [www.polychoron.org/tt]</a>
+		    		</div>
+		    		<br class="clearboth" />
+		    	</div>
+		    	<iframe class="footer" src="footer.html" frameborder="0"></iframe>
+		    </div>
+	    </div>
+  	</body>
+</html>

@@ -9,7 +9,7 @@ html, body{
 }
 
 body.content{
-	background: #000000;
+	background: #3d347e;
 }
 
 div.main_container{
@@ -21,11 +21,12 @@ div{
 	display: block;
 }
 
-object.header {
+iframe.header {
 	width:100%;
 	background-color:transparent;
 	margin:0px;
 	height:46px;
+	vertical-align:bottom;
 }
 
 div.nav_wrapper{
@@ -142,12 +143,14 @@ h1.title{
 	margin-bottom: 30px;
 }
 
+h2{
+	font-family: aleoregular;
+	font-size: 1.8rem;
+}
+
 h2.subtitle{
 	margin-bottom: 20px;
-	font-family: aleoregular;
 	color: #eeeeee;
-	font-size: 1.8rem;
-	margin-top:10px;
 	margin-top:15px;
 	text-align: center;
 }
@@ -434,14 +437,103 @@ iframe.video_container{
 }
 
 /**
+ * 	EVENTS
+ */
+
+div.event-banner{
+	background: transparent url(../images/banner-events.png) 50% 0 no-repeat fixed;
+	width:100%;
+	height: 240px;
+}
+
+div.events-thunder{
+	width:100%;
+	overflow:auto;
+	clear: both;
+	background: #FFFFFF;
+	padding: 5%;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;
+}
+
+div.thunder-logo-container{
+	float: left;
+	display:block;
+}
+
+h1.banner-title{
+	line-height: 240px;
+	font-size: 2.5rem;
+}
+
+img.thundertrials-logo{
+	width: 300px;
+	height: auto;
+	display:block;
+	margin: 0 auto;
+}
+
+h1.thundertrials-title{
+	font-family:franchiseregular;
+	font-size: 4rem;
+	margin:0px;
+	color:#000000;
+}
+
+h2.thundertrials-subtitle{
+	font-family:franchiseregular;
+	margin:0px;
+	font-size: 3.5rem;
+	color:#000000;
+}
+
+div.thunder-side-description{
+	display:inline-block;
+	margin-bottom: 30px;
+	vertical-align:top;
+}
+
+a.dark-link:link, a.dark-link:visited{
+	text-decoration: none;
+	color: #000000;
+	font-size: 1.4rem;
+	font-weight: normal !important;
+	font-family:homizio_novaregular;
+	font-style: normal !important;
+}
+
+a.dark-link:hover{
+	color:#e0922e !important;
+}
+
+p.black-text{
+	color:#000000;
+	margin-bottom: 15px;
+}
+
+p.center-text{
+	text-align: center;
+}
+
+h2.small-subtitle{
+	color: #434343;
+	font-size: 1.4rem;
+	margin-bottom:15px;
+}
+
+.clearboth {clear:both;}
+
+/**
  * 	FOOTER
  */
 
-object.footer {
+iframe.footer {
 	width:100%;
 	background-color:#3d347e;
 	overflow:hidden;
 	margin:0px;
+	vertical-align:bottom;
 }
 
 div.footer{
@@ -548,4 +640,29 @@ div.icon_cell{
 
 #button_style_t:hover, #button_style_t:active{
 	background-position: 0 0;
+}
+
+/**
+ * CONSTRUCTION
+ */
+
+div.under-construction-container{
+	width:100%;
+	overflow:auto;
+	background: #FFFFFF;
+	padding: 5%;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;
+}
+
+#construction-title{
+	color:#000000;
+}
+
+img.construction-img{
+	display: block;
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom:30px;
 }

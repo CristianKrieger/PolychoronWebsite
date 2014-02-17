@@ -24,6 +24,30 @@
 			$('#third').parallax("50%", 0.1);
 			$('#fourth').parallax("50%", 0.1);
 			
+			$(window).resize(videoSectionResize);
+			$(document).ready(videoSectionResize);
+			
+			function videoSectionResize() {
+				var windowSizeThreshold = 1024;
+				var videoProportionRatio = 0.5625;
+				if($(window).width()>windowSizeThreshold){
+				    var windowWidthVideo = 0.35;
+				    var windowWidthDescription = 1-windowWidthVideo-0.05; 
+			    	var containerWidth=$('.video_section').width();
+			    	var videoWidth=containerWidth * windowWidthVideo;
+			        $('.video_container').css({	width: videoWidth,
+			        							height: videoWidth*videoProportionRatio,
+			        							marginLeft: "5%"});
+			        $('.video_description').css({width: containerWidth*windowWidthDescription-2});
+			   }else{
+			    	var containerWidth=$('.video_section').width();
+			        $('.video_container').css({	width: containerWidth,
+			        							height: containerWidth*videoProportionRatio,
+			        							marginLeft: "0px"});
+			        $('.video_description').css({width: "100%"});
+			   }
+			}
+			
 			$("div").hover(function(){
 				if (!$(this).hasClass('animated')) {
 					$(this).dequeue().stop().animate({ width: "200px" });
@@ -36,6 +60,7 @@
 		</script>
 		<script type="text/javascript">
 			var currentText='#default_text';
+			var currentObj=0;
             $(function() {
 				$('#circle1').circlemouse({
 					onMouseEnter: function(el) {
@@ -82,6 +107,21 @@
 					}
 				});
 				
+				function toggleText(current, id){
+					if(window.current===undefined){
+						window.current='#default_text';
+					}
+					$(window.current).hide("fast");
+					if(window.current===id){
+						id='#default_text';
+					}
+					$(id).show("slow");
+					window.current=id;
+				}
+				
+				/**
+				 *OBJECTIVES 
+				 */
 				
 				$('#circle_obj_1').circlemouse({
 					onMouseEnter: function(el) {
@@ -91,7 +131,7 @@
 						el.removeClass('ec-circle-hover');
 					},
 					onClick: function(el) {
-						
+						toggleObjectiveDescription(1);
 					}
 				});
 				$('#circle_obj_2').circlemouse({
@@ -102,7 +142,7 @@
 						el.removeClass('ec-circle-hover');
 					},
 					onClick: function(el) {
-						
+						toggleObjectiveDescription(2);
 					}
 				});
 				$('#circle_obj_3').circlemouse({
@@ -113,7 +153,7 @@
 						el.removeClass('ec-circle-hover');
 					},
 					onClick: function(el) {
-						
+						toggleObjectiveDescription(3);
 					}
 				});
 				$('#circle_obj_4').circlemouse({
@@ -124,7 +164,7 @@
 						el.removeClass('ec-circle-hover');
 					},
 					onClick: function(el) {
-						
+						toggleObjectiveDescription(4);
 					}
 				});
 				$('#circle_obj_5').circlemouse({
@@ -135,7 +175,7 @@
 						el.removeClass('ec-circle-hover');
 					},
 					onClick: function(el) {
-						
+						toggleObjectiveDescription(5);
 					}
 				});
 				$('#circle_obj_6').circlemouse({
@@ -146,20 +186,289 @@
 						el.removeClass('ec-circle-hover');
 					},
 					onClick: function(el) {
-						
+						toggleObjectiveDescription(6);
 					}
 				});
 			});
-			function toggleText(current, id){
-				if(window.current===undefined){
-					window.current='#default_text';
+			
+			function toggleObjectiveDescription(id){
+				switch(id){
+				case 1:
+					if(window.currentObj==0){
+						$('#obj_logo').fadeToggle();
+						$('#circle_obj_container_2').fadeToggle();
+						$('#circle_obj_container_3').fadeToggle();
+						$('#circle_obj_container_4').fadeToggle();
+						$('#circle_obj_container_5').fadeToggle();
+						$('#circle_obj_container_6').fadeToggle();
+						$("#circle_obj_container_1").fadeToggle();
+						$("#circle_obj_container_1").animate({top: "5%",
+												left: "5%",
+												margin: "0px"},
+												350);
+						$("#circle_obj_container_1").fadeToggle();
+						$("#circle_text_1").text("Regresar");
+						$("#hidden_title").text("Promover el emprendimiento tecnológico");
+						$("#hidden_content").text("La mejor manera de generar valor para el país es a través del emprendimiento. "+
+						"Polychoron busca fomentar la creación de nuevas empresas de base tecnológica que creen más y mejores empleos, "+
+						"atraígan inversión extrajera, desarrollen el ecosistema de proveedores e impulsen el PIB mexicano. Para esto, "+
+						"la organización realiza eventos dentro y fuera de universidades para capacitar, vincular y motivar a potenciales "+
+						"emprendedores. Para más información, visite la sección de eventos.");
+						$("#hidden_title").fadeToggle();
+						$("#hidden_content").fadeToggle();
+						
+						window.currentObj=1;
+					}
+					else{
+						$("#circle_obj_container_1").fadeToggle();
+						$("#hidden_title").fadeToggle();
+						$("#hidden_content").fadeToggle();
+						$("#circle_obj_container_1").animate({top: "50%",
+												left: "50%",
+												marginLeft: "-350px",
+												marginTop: "-100px"},
+												350);
+						$("#circle_text_1").html('Fomentar<br>Start-ups');
+						$('#obj_logo').fadeToggle();
+						$("#circle_obj_container_1").fadeToggle();
+						$('#circle_obj_container_2').fadeToggle();
+						$('#circle_obj_container_3').fadeToggle();
+						$('#circle_obj_container_4').fadeToggle();
+						$('#circle_obj_container_5').fadeToggle();
+						$('#circle_obj_container_6').fadeToggle();
+						window.currentObj=0;
+					}
+					break;
+				case 2:
+					if(window.currentObj==0){
+						$('#obj_logo').fadeToggle();
+						$('#circle_obj_container_2').fadeToggle();
+						$('#circle_obj_container_3').fadeToggle();
+						$('#circle_obj_container_4').fadeToggle();
+						$('#circle_obj_container_5').fadeToggle();
+						$('#circle_obj_container_6').fadeToggle();
+						$("#circle_obj_container_1").fadeToggle();
+						$("#circle_obj_container_2").animate({top: "5%",
+												left: "5%",
+												margin: "0px"},
+												350);
+						$("#circle_obj_container_2").fadeToggle();
+						$("#circle_text_2").text("Regresar");
+						$("#hidden_title").text("Apoyar a emprendedores e iniciativas innovadoras");
+						$("#hidden_content").text("Sabemos que el camino del emprendedor es complicado, ya sea por los limitados recursos, "+
+						"la falta de contactos, la inexperiencia de negocios o la falta de conocimiento técnico. Por ello, nuestra "+
+						"organización busca ayudar a start-ups con las herramientas, vinculación o recursos que necesitan, de modo que puedan "+
+						"alcanzar el éxito. Polychoron te apoya como emprendedor desde mentoría y capacitación hasta búsqueda de capital y "+
+						"recursos humanos.");
+						$("#hidden_title").fadeToggle();
+						$("#hidden_content").fadeToggle();
+						window.currentObj=1;
+					}
+					else{
+						$("#circle_obj_container_2").fadeToggle();
+						$("#hidden_title").fadeToggle();
+						$("#hidden_content").fadeToggle();
+						$("#circle_obj_container_2").animate({top: "50%",
+												left: "50%",
+												marginLeft: "-225px",
+												marginTop: "-317px"},
+												350);
+						$("#circle_text_2").html('Apoyar Innovación');
+						$('#obj_logo').fadeToggle();
+						$("#circle_obj_container_1").fadeToggle();
+						$('#circle_obj_container_2').fadeToggle();
+						$('#circle_obj_container_3').fadeToggle();
+						$('#circle_obj_container_4').fadeToggle();
+						$('#circle_obj_container_5').fadeToggle();
+						$('#circle_obj_container_6').fadeToggle();
+						window.currentObj=0;
+					}
+				  	break;
+				case 3:
+					if(window.currentObj==0){
+						$('#obj_logo').fadeToggle();
+						$('#circle_obj_container_2').fadeToggle();
+						$('#circle_obj_container_3').fadeToggle();
+						$('#circle_obj_container_4').fadeToggle();
+						$('#circle_obj_container_5').fadeToggle();
+						$('#circle_obj_container_6').fadeToggle();
+						$("#circle_obj_container_1").fadeToggle();
+						$("#circle_obj_container_3").animate({top: "5%",
+												left: "5%",
+												margin: "0px"},
+												350);
+						$("#circle_obj_container_3").fadeToggle();
+						$("#circle_text_3").text("Regresar");
+						$("#hidden_title").text("Desarrollar el potencial del talento mexicano");
+						$("#hidden_content").text("México está lleno de talento, pero la falta de oportunidades laborales, las condiciones "+
+						"económicas adversas y mucho otros factores, impiden que estas capacidades sean explotadas. Polychoron busca cambiar "+
+						"esta situación descubriendo este talento y ayudándolo a sacar lo mejor de si; ya sea para convertirlos en "+
+						"emprendedores o involucrarlos en una industria que los impulse al éxito. Mejores profesionales son un sinónimo de "+
+						"mayor innovación y mejores capacidades científicas y tecnológicas para el país.");
+						$("#hidden_title").fadeToggle();
+						$("#hidden_content").fadeToggle();
+						window.currentObj=1;
+					}
+					else{
+						$("#circle_obj_container_3").fadeToggle();
+						$("#hidden_title").fadeToggle();
+						$("#hidden_content").fadeToggle();
+						$("#circle_obj_container_3").animate({top: "50%",
+												left: "50%",
+												marginLeft: "25px",
+												marginTop: "-317px"},
+												350);
+						$("#circle_text_3").html('Impulsar Talento');
+						$('#obj_logo').fadeToggle();
+						$("#circle_obj_container_1").fadeToggle();
+						$('#circle_obj_container_2').fadeToggle();
+						$('#circle_obj_container_3').fadeToggle();
+						$('#circle_obj_container_4').fadeToggle();
+						$('#circle_obj_container_5').fadeToggle();
+						$('#circle_obj_container_6').fadeToggle();
+						window.currentObj=0;
+					}
+				  	break;
+				case 4:
+					if(window.currentObj==0){
+						$('#obj_logo').fadeToggle();
+						$('#circle_obj_container_2').fadeToggle();
+						$('#circle_obj_container_3').fadeToggle();
+						$('#circle_obj_container_4').fadeToggle();
+						$('#circle_obj_container_5').fadeToggle();
+						$('#circle_obj_container_6').fadeToggle();
+						$("#circle_obj_container_1").fadeToggle();
+						$("#circle_obj_container_4").animate({top: "5%",
+												left: "5%",
+												margin: "0px"},
+												350);
+						$("#circle_obj_container_4").fadeToggle();
+						$("#circle_text_4").text("Regresar");
+						$("#hidden_title").text("Hacer crecer el ecosistema tecnológico mexicano");
+						$("#hidden_content").text("El desarrollo científico y tecnológico de México se ha rezagado y requiere no sólo de "+
+						"profesionales, sino también de empresas que puedan convertir este talento en innovación. Polychoron busca unir "+
+						"a compañías, universidades, emprendedores, profesionistas, proveedores, manufacturadores e investigadores para "+
+						"generar relaciones de beneficio mutuo que se traduzcan en mejores oportunidades laborales y de negocios. "+
+						"Asimismo, tenemos como visión un México sin 'fuga de cerebros', con una menores trabas para el emprendedor y un "+
+						"sistema educativo al nivel de las necesidades de la industria.");
+						$("#hidden_title").fadeToggle();
+						$("#hidden_content").fadeToggle();
+						window.currentObj=1;
+					}
+					else{
+						$("#circle_obj_container_4").fadeToggle();
+						$("#hidden_title").fadeToggle();
+						$("#hidden_content").fadeToggle();
+						$("#circle_obj_container_4").animate({top: "50%",
+												left: "50%",
+												marginLeft: "150px",
+												marginTop: "-100px"},
+												350);
+						$("#circle_text_4").html('Nutrir a la industria');
+						$('#obj_logo').fadeToggle();
+						$("#circle_obj_container_1").fadeToggle();
+						$('#circle_obj_container_2').fadeToggle();
+						$('#circle_obj_container_3').fadeToggle();
+						$('#circle_obj_container_4').fadeToggle();
+						$('#circle_obj_container_5').fadeToggle();
+						$('#circle_obj_container_6').fadeToggle();
+						window.currentObj=0;
+					}
+				 	break;
+				case 5:
+					if(window.currentObj==0){
+						$('#obj_logo').fadeToggle();
+						$('#circle_obj_container_2').fadeToggle();
+						$('#circle_obj_container_3').fadeToggle();
+						$('#circle_obj_container_4').fadeToggle();
+						$('#circle_obj_container_5').fadeToggle();
+						$('#circle_obj_container_6').fadeToggle();
+						$("#circle_obj_container_1").fadeToggle();
+						$("#circle_obj_container_5").animate({top: "5%",
+												left: "5%",
+												margin: "0px"},
+												350);
+						$("#circle_obj_container_5").fadeToggle();
+						$("#circle_text_5").text("Regresar");
+						$("#hidden_title").text("Crear redes de colaboración y apoyo");
+						$("#hidden_content").text("Nada es imposible si lo hacemos todos juntos, México necesita menos egoísmo y más "+
+						"cooperación. Polychoron busca cambiar el individualismo que suele caracterizar al emprendedor mexicano. Tenemos el "+
+						"objetivo de integrar diferentes áreas del conocimiento para crear productos increíbles y empresas exitosas. Además, "+
+						"queremos construir redes de personas, empresas e instituciones que se apoyen mutuamente para alcanzar cometidos comunes "+
+						"más ambiciosos y redituables.");
+						$("#hidden_title").fadeToggle();
+						$("#hidden_content").fadeToggle();
+						window.currentObj=1;
+					}
+					else{
+						$("#circle_obj_container_5").fadeToggle();
+						$("#hidden_title").fadeToggle();
+						$("#hidden_content").fadeToggle();
+						$("#circle_obj_container_5").animate({top: "50%",
+												left: "50%",
+												marginLeft: "25px",
+												marginTop: "117px"},
+												350);
+						$("#circle_text_5").html('Vincular e Integrar');
+						$('#obj_logo').fadeToggle();
+						$("#circle_obj_container_1").fadeToggle();
+						$('#circle_obj_container_2').fadeToggle();
+						$('#circle_obj_container_3').fadeToggle();
+						$('#circle_obj_container_4').fadeToggle();
+						$('#circle_obj_container_5').fadeToggle();
+						$('#circle_obj_container_6').fadeToggle();
+						window.currentObj=0;
+					}
+				  	break;
+				case 6:
+					if(window.currentObj==0){
+						$('#obj_logo').fadeToggle();
+						$('#circle_obj_container_2').fadeToggle();
+						$('#circle_obj_container_3').fadeToggle();
+						$('#circle_obj_container_4').fadeToggle();
+						$('#circle_obj_container_5').fadeToggle();
+						$('#circle_obj_container_6').fadeToggle();
+						$("#circle_obj_container_1").fadeToggle();
+						$("#circle_obj_container_6").animate({top: "5%",
+												left: "5%",
+												margin: "0px"},
+												350);
+						$("#circle_obj_container_6").fadeToggle();
+						$("#circle_text_6").text("Regresar");
+						$("#hidden_title").text("Democratizar la ciencia y la tecnología");
+						$("#hidden_content").text("Uno de nuestros principales pilares desde la fundación de Polychoron es el empoderamiento "+
+						"tecnológico de las masas. Buscamos que cualquier persona pueda desarrollar ciencia y tecnología sin limitaciones de "+
+						"ningún tipo; derribando el muro del extremo elitismo científico-tecnológico y la falta de educación, herramientas y "+
+						"recursos. Creemos en el empoderamiento de la gente para innovar más, desarrollar una mejor democracia y formar una "+
+						"sociedad más íntegra, responsable y en control de su futuro.");
+						$("#hidden_title").fadeToggle();
+						$("#hidden_content").fadeToggle();
+						window.currentObj=1;
+					}
+					else{
+						$("#circle_obj_container_6").fadeToggle();
+						$("#hidden_title").fadeToggle();
+						$("#hidden_content").fadeToggle();
+						$("#circle_obj_container_6").animate({top: "50%",
+												left: "50%",
+												marginLeft: "-225px",
+												marginTop: "117px"},
+												350);
+						$("#circle_text_6").html('Democratizar');
+						$('#obj_logo').fadeToggle();
+						$("#circle_obj_container_1").fadeToggle();
+						$('#circle_obj_container_2').fadeToggle();
+						$('#circle_obj_container_3').fadeToggle();
+						$('#circle_obj_container_4').fadeToggle();
+						$('#circle_obj_container_5').fadeToggle();
+						$('#circle_obj_container_6').fadeToggle();
+						window.currentObj=0;
+					}
+				  	break;
+				default:
+				  	
 				}
-				$(window.current).hide("fast");
-				if(window.current===id){
-					id='#default_text';
-				}
-				$(id).show("slow");
-				window.current=id;
+				
 			}
         </script>
 	</head>
@@ -199,7 +508,7 @@
 		    			</li>
 		    		</ul>
 		    		<div id="default_text" style="display:block;">
-			    		<h2 class="subtitle">Polychoron busca crear una cultura de colaboración para que empresas, universidades y nuevos emprendedores puedan lograr más.</h2>
+			    		<h2 class="subtitle">Polychoron [polikoron] busca crear una cultura de colaboración para que empresas, universidades y nuevos emprendedores puedan lograr más.</h2>
 		    			<p class="home_content">
 		    				Queremos desarrollar un mejor México al proveer las herramientas, vincular, asesorar y apoyar a todos aquellos interesados en innovar tecnológicamente. Nuestro país puede llegar mucho más lejos si comenzamos a ayudarnos mutuamente, compartir nuestro conocimiento y trabajar juntos. Asimismo, Polychoron promueve la integración de la tecnología con áreas cómo el diseño y los negocios para lograr el desarrollo de productos y servicios increíbles que se traduzcan en nuevas y mejores oportunidades de emprendimiento. 
 		    			</p>
@@ -233,42 +542,63 @@
 		    	<div class="plain_container" id="objectives">
 		    		<h1 class="title">Nuestros objetivos</h1>
 		    		<div class="objective_container">
-		    			<img src="images/Polychoron_notex_small.png" class="small_logo"/>
+		    			<img src="images/Polychoron_notex_small.png" class="small_logo" id="obj_logo"/>
 		    			<div class="circle_obj_item" id="circle_obj_container_1">
 		    				<a id="circle_obj_1" class="ec-circle">
-								<h3>Fomentar<br>Start-ups</h3>
+								<h3 id="circle_text_1">Fomentar<br>Start-ups</h3>
 							</a>
 		    			</div>
 		    			<div class="circle_obj_item" id="circle_obj_container_2">
 		    				<a id="circle_obj_2" class="ec-circle">
-								<h3>Apoyar Innovación</h3>
+								<h3 id="circle_text_2">Apoyar Innovación</h3>
 							</a>
 		    			</div>
 		    			<div class="circle_obj_item" id="circle_obj_container_3">
 		    				<a id="circle_obj_3" class="ec-circle">
-								<h3>Impulsar Talento</h3>
+								<h3 id="circle_text_3">Impulsar Talento</h3>
 							</a>
 		    			</div>
 		    			<div class="circle_obj_item" id="circle_obj_container_4">
 		    				<a id="circle_obj_4" class="ec-circle">
-								<h3>Nutrir a la Industria</h3>
+								<h3 id="circle_text_4">Nutrir a la Industria</h3>
 							</a>
 		    			</div>
 		    			<div class="circle_obj_item" id="circle_obj_container_5">
 		    				<a id="circle_obj_5" class="ec-circle">
-								<h3>Vincular e Integrar</h3>
+								<h3 id="circle_text_5">Vincular e Integrar</h3>
 							</a>
 		    			</div>
 		    			<div class="circle_obj_item" id="circle_obj_container_6">
 		    				<a id="circle_obj_6" class="ec-circle">
-								<h3>Democratizar</h3>
+								<h3 id="circle_text_6">Democratizar</h3>
 							</a>
 		    			</div>
+		    			<h3 id="hidden_title" style="display:none;"></h3>
+		    			<p id="hidden_content" style="display:none;"></p>
 		    		</div>
 		    	</div>
 		    	<div id="third" class="static_bg"></div>
 		    	<div class="plain_container" id="video">
 		    		<h1 class="title">Funcionamiento</h1>
+		    		<div class="video_section">
+			    		<div class="video_description">
+			    			<p>Polychoron tiene múltiples fuentes de ingreso para lograr sus objetivos, entre ellos:</p>
+			    			<ul>
+				    			<li>Desarrollo de proyectos de alta tecnología (más información disponible en el video mostrado).</li>
+				    			<li>Ejecución de eventos.</li>
+				    			<li>Donaciones de cualquier tipo.</li>
+				    			<li>Servicios de consultoría, capacitación y vinculación.</li>
+				    		</ul>
+				    		<p>Para saber más sobre nuestros servicios, visite la sección dedicada o contáctenos directamente. Ahora bien, los recursos recaudados son utilizados principalmente para:</p>
+				    		<ul>
+				    			<li>Apoyar a emprendedores, desde capacitación hasta recursos.</li>
+				    			<li>Promover el conocimiento científico-tecnológico en personas sin acceso a él.</li>
+				    			<li>Crear laboratorios y lugares de trabajo abiertos a startups, inventores, ingenieros y diseñadores.</li>
+				    			<li>Campañas de fomento a la innovación.</li>
+				    		</ul>
+			    		</div>
+			    		<iframe class="video_container" width="560" height="315" src="//www.youtube.com/embed/RtfeIBuiP6M" frameborder="0" allowfullscreen></iframe>
+			    	</div>
 		    	</div>
 		    	<div id="fourth" class="static_bg"></div>
 		    	<object class="footer" type="text/html" data="footer.html"></object>

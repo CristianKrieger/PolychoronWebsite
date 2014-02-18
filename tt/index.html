@@ -5,62 +5,242 @@
 		<link type="text/css" rel="stylesheet" href="CSS/main_stylesheet.css"/>
 		<link type="text/css" rel="stylesheet" href="../fonts/stylesheet.css"/>
 		<title>Thunder Trials</title>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+		<script type="text/javascript" src="http://flesler-plugins.googlecode.com/files/jquery.scrollTo-1.4.2-min.js"></script>
+		<script type="text/javascript" src="http://flesler-plugins.googlecode.com/files/jquery.localscroll-1.2.7-min.js"></script>
+		<script>
+			$(document).ready(function(){
+		        $('#nav_links').localScroll({
+		           target:'body'
+		        });
+		    });
+		</script>
 	</head>
 	<body class="content">
 		<div class="main_container">
-	        <iframe class="header" src="tt_header.html" frameborder="0"></iframe>
-		    <div class="content-wrapper">
+	        <div class="nav_bar_bg">
+				<div class="nav_bar">
+					<img class="nav-logo" src="images/txt-only-logo.png">
+					<ul class="nav_list" id="nav_links">
+						<li class="nav_item"><a class="nav_link" id="first_nav_link" href="#about">Evento</a></li><li class="nav_item"><a class="nav_link" href="#second">Sedes</a></li><li class="nav_item"><a class="nav_link" href="#calendar">Calendario</a></li><li class="nav_item"><a class="nav_link" href="#third">Registro</a></li><li class="nav_item"><a class="nav_link" href="../contact.php">Contacto</a></li>
+					</ul>
+				</div>
+			</div>
+		    <div class="content-wrapper" id="top">
 		    	<div class="parallax_div" id="first">
-		    		<div class="thunder-logo-container">
+		    		<div class="thunder-logo-container center-container">
 		    			<img class="thundertrials-logo" src="../images/thunder-trials-logo.png"/>
 			    		<h1 class="title thundertrials-title">THUNDER TRIALS</h1>
 			    		<h2 class="subtitle thundertrials-subtitle">ENERO-MAYO 2014</h2>
 		    		</div>
 		    	</div>
-		    	
-		    	<div class="under-construction-container">
-		    		<img class="construction-img" src="../images/under-construction.png"/>
-		    		<h1 class="title" id="construction-title">
-		    			Sitio Web en construcción, gracias por su comprensión.
-		    		</h1>
+		    	<div id="about" class="plain_container">
+		    		<h1 class="title">ACERCA DEL EVENTO</h1>
+		    		<p class="black_text centered_text">
+		    			Thunder Trials es un evento enfocado a encontrar universitarios talentosos e impulsarlos para construir start-ups exitosas. A través de 90 días, se seleccionarán a 60 de los mejores alumnos de cada universidad, los cuales formaran equipos multidisciplinarios para concursar por premios increíbles.
+		    			El concurso tiene como objetivo el convertir una idea innovadora en un producto mínimo viable que se pueda convertir en negocio, para ello se les proveerá con capacitación, mentoreo y vinculación en las áreas involucradas.
+		    			La etapa final del concurso está dedicada a pulir el desarrollo de su proyecto y llevarlo a un jurado con profesionales de área y representantes de fondos de capital privado.<br>
+		    			Ahora bien, para la edición Enero-Mayo 2014, los Thunder Trials están enfocados al desarrollo start-ups con aplicaciones móviles. Una área de oportunidad enorme para los negocios, que usualmente viene de la mano de desarrollos de gran escalabilidad y crecimiento acelerado.
+		    		</p>
+		    		<ul class="circle_list">
+		    			<li class="circle_list_item">
+		    				<a id="circle1" class="ec-circle">
+							</a>
+		    			</li>
+		    			<li class="circle_list_item">
+		    				<a id="circle2" class="ec-circle">
+							</a>
+		    			</li>
+		    			<li class="circle_list_item">
+		    				<a id="circle3" class="ec-circle">
+							</a>
+		    			</li>
+		    		</ul>
+		    		<h2 class="subtitle">SELECCIÓN</h2>
+		    		<p class="black_text centered_text">
+		    			El proceso de selección de alumnos se realizará en base a tres criterios: técnico, creativo y negocios. El participante debe elegir el área de su mayor interés y deberá completar una serie de retos para demostrar que es el mejor. 
+		    			Estos desafíos buscan encontrar aquellos alumnos con la mayor disposición a emprender, las mejores capacidades como autodidácta y un talento innato. Por ello, en algunas ocasiones no es necesario que el participante requiera amplios conocimientos de la materia.
+		    			Se elegirán a los 20 mejor participantes por categoría en cada escuela.
+		    		</p>
+		    		<ul class="circle_list">
+		    			<li class="circle_list_item">
+		    				<a id="circle4" class="ec-circle">
+							</a>
+		    			</li>
+		    			<li class="circle_list_item">
+		    				<a id="circle5" class="ec-circle">
+							</a>
+		    			</li>
+		    			<li class="circle_list_item">
+		    				<a id="circle6" class="ec-circle">
+							</a>
+		    			</li>
+		    		</ul>
+		    		<h2 class="subtitle">90 DÍAS PARA FUNDAR TU START-UP</h2>
+		    		<p class="black_text centered_text">
+		    			Una vez que se han elegido a los 60 concursantes de cada universidad, comienza oficialmente el desarrollo de tu idea de negocio. En los siguiente días, deberás reunir un equipo de 3 personas (uno de cada categoría) a partir de los seleccionados; para ello,
+		    			te daremos acceso a una red social privada en la que podrás ver el trabajo de los otros durante los desafíos y comunicarte con ellos. Esta red social estará disponible en este sitio web y en la aplicación oficial del evento, donde también recibirás noticias del evento y serás notificado de 
+		    			los cursos, talleres y conferencias que hemos preparado para que puedas construir un producto increíble. Durante los meses consecutivos, deberás ponerte de acuerdo con tu equipo respecto a desarrollarán, comenzar la construcción de tu producto, buscar mentoría (si la necesitas) y prepararte para la final.
+		    		</p>
+		    		<h2 class="subtitle">CLAUSURA</h2>
+		    		<p class="black_text centered_text">
+		    			Para el cierre del evento, los participantes de las diferentes universidades deberán reunirse en la sede de clausura para el evento final, la selección de ganadores y la premiación. Este evento tiene una duración de 10 horas y busca pulir el producto final de los seleccionados para que puedan presentar un 
+		    			desarrollo asombroso a inversionistas, profesionales del área, fondos de capital y demás jueces. Entre los premios están: cita con inversionistas interesados en el producto, becas de la incubadora de empresa del ITESM, recursos web para construir una página web, entre muchos otros.
+		    		</p>
+		    		<h3 class="big-text centered_text">
+		    			Descarga la app del evento:
+		    		</h3>
+		    		<img class="button_gplay" src="images/googleplay-button.png" />
 		    	</div>
-		    	<div class="under-construction-container">
-		    		<img class="construction-img" src="../images/under-construction.png"/>
-		    		<h1 class="title" id="construction-title">
-		    			Sitio Web en construcción, gracias por su comprensión.
-		    		</h1>
+		    	<div class="parallax_div" id="second">
+		    		<div class="center-container">
+			    		<h1 class="title thundertrials-title">SEDES</h1>
+			    		<img src="images/place01.png" class="center-element place"/>
+			    		<img src="images/place02.png" class="center-element place"/>
+		    		</div>
 		    	</div>
-		    	<div class="under-construction-container">
-		    		<img class="construction-img" src="../images/under-construction.png"/>
-		    		<h1 class="title" id="construction-title">
-		    			Sitio Web en construcción, gracias por su comprensión.
-		    		</h1>
-		    	</div><br /><div class="under-construction-container">
-		    		<img class="construction-img" src="../images/under-construction.png"/>
-		    		<h1 class="title" id="construction-title">
-		    			Sitio Web en construcción, gracias por su comprensión.
-		    		</h1>
+		    	<div id="calendar" class="plain_container">
+		    		<h1 class="title">CALENDARIO</h1>
+		    		<p class="black_text centered_text">
+		    			El evento se realizará en paralelo en ambas sedes y tendrán sus eventos individuales; a excepción de la clausura, la cual se realizará en el ITESM Campus Estado de México.
+		    			La inauguración de los Thunder Trials se realizará con una conferencia impartida por uno de los emprendedores tecnológicos mexicanos más reconocidos: Ricardo Gómez Quiñones, fundador de Kaxan Media Group.
+		    			Te invitamos a asistir a esta ponencia donde además se ahodará en detalles respecto al evento (bases, premios, etc). 
+		    		</p>
+		    		<img src="images/opening-banner.png" class="event"/>
+		    		<table>
+		    			<thead>
+		    				<tr class="head">
+		    					<th></th>
+		    					<th colspan="2">ITESM CEM</th>
+		    					<th colspan="2">ITESM TOL</th>
+		    					<th></th>
+		    				</tr>
+		    				<tr class="head">
+		    					<th>Evento</th>
+		    					<th>Fecha</th>
+		    					<th>Lugar</th>
+		    					<th>Fecha</th>
+		    					<th>Lugar</th>
+		    					<th>Duración</th>
+		    				</tr>
+		    			</thead>
+		    			<tbody>
+		    				<tr class="odd">
+			    				<td>Activación Promocional</td>
+			    				<td>18 de Febrero<br>13:00 hrs</td>
+			    				<td>Entre Aulas 2 y 3</td>
+			    				<td></td>
+			    				<td></td>
+			    				<td>3 y 1/2 horas</td>
+			    			</tr>
+			    			<tr>
+			    				<td>Conferencia de Apertura</td>
+			    				<td>21 de Febrero<br>17:00 hrs</td>
+			    				<td>Auditorio de Profesional</td>
+			    				<td>20 de Febrero<br>17:30 hrs</td>
+			    				<td>Auditorio 2</td>
+			    				<td>Aprox. 90 min</td>
+			    			</tr>
+			    			<tr class="odd">
+			    				<td>Cierre Convocatoria</td>
+			    				<td colspan="4">23 de Marzo<br>Medios Electrónicos</td>
+			    				<td></td>
+			    			</tr>
+			    			<tr>
+			    				<td>Anuncio de Seleccionados</td>
+			    				<td colspan="4">26 de Marzo<br>Medios Electrónicos</td>
+			    				<td></td>
+			    			</tr>
+			    			<tr class="odd">
+			    				<td>Conferencia de Negocios en Mobile</td>
+			    				<td>Abril<br>Horario por confirmar</td>
+			    				<td>Por confirmar</td>
+			    				<td>Abril<br>Horario por confirmar</td>
+			    				<td>Por confirmar</td>
+			    				<td>Aprox. 3 horas</td>
+			    			</tr>
+			    			<tr>
+			    				<td>Curso de diseño para Mobile</td>
+			    				<td>Abril<br>Horario por confirmar</td>
+			    				<td>Por confirmar</td>
+			    				<td>Abril<br>Horario por confirmar</td>
+			    				<td>Por confirmar</td>
+			    				<td>Aprox. 3 horas</td>
+			    			</tr>
+			    			<tr class="odd">
+			    				<td>Curso de programación Android</td>
+			    				<td>Abril<br>Horario por confirmar</td>
+			    				<td>Por confirmar</td>
+			    				<td>Abril<br>Horario por confirmar</td>
+			    				<td>Por confirmar</td>
+			    				<td>Aprox. 12 horas</td>
+			    			</tr>
+			    			<tr>
+			    				<td>Clausura</td>
+			    				<td colspan="4">23 de Mayo<br>ITESM CEM</td>
+			    				<td>Aprox. 10 horas</td>
+			    			</tr>
+		    			</tbody>
+		    		</table>
 		    	</div>
-		    	<div class="under-construction-container">
-		    		<img class="construction-img" src="../images/under-construction.png"/>
-		    		<h1 class="title" id="construction-title">
-		    			Sitio Web en construcción, gracias por su comprensión.
-		    		</h1>
+		    	<div class="parallax_div" id="third">
+		    		<div class="center-container">
+			    		<h1 class="title thundertrials-title">REGISTRO</h1>
+			    		<div id="bgform">
+					        <input id="nameinput" type="text" name="fname" placeholder="Nombre Completo">
+					        <input id="mailinput" type="text" name="fname" placeholder="Email">
+					        <input id="telephoneinput" type="text" name="fname" placeholder="Teléfono">
+					        <input id="passwordinput" type="text" name="fname" placeholder="Contraseña">
+					        <input id="passwordconfirminput" type="text" name="fname" placeholder="Confirmación de Contraseña">
+							<div class="university-container">
+								<p class="label">Universidad</p>
+								<select name="university">
+									<option value="ITESM-CEM" selected>ITESM CEM</option>
+									<option value="ITESM-TOL">ITESM TOL</option>
+								</select>
+							</div>
+							<div class="semester-container">
+								<p class="label">Semestre</p>
+								<select name="semester">
+									<option value="1" selected>1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+									<option value="9">9</option>
+									<option value="10">10</option>
+									<option value="11">+10</option>
+									<option value="12">Posgrado</option>
+									<option value="13">Exatec</option>
+								</select>
+							</div>
+							<input id="programinput" type="text" name="fname" placeholder="Carrera (Sólo Siglas)">
+					        <div id="sendbutton">
+					        	<h4>Enviar</h4>
+					        </div>
+					    </div>
+		    		</div>
 		    	</div>
-		    	<div class="under-construction-container">
-		    		<img class="construction-img" src="../images/under-construction.png"/>
-		    		<h1 class="title" id="construction-title">
-		    			Sitio Web en construcción, gracias por su comprensión.
-		    		</h1>
-		    	</div>
-		    	<div class="under-construction-container">
-		    		<img class="construction-img" src="../images/under-construction.png"/>
-		    		<h1 class="title" id="construction-title">
-		    			Sitio Web en construcción, gracias por su comprensión.
-		    		</h1>
-		    	</div>
-		    	<iframe class="footer" src="tt_footer.html" frameborder="0"></iframe>
 		    </div>
+		    <div id="footer">
+        		<h5>PATROCINADORES Y ALIADOS</h5>
+        		<div class="center-container">
+        			<img src="images/sponsors.png"/>
+	    		</div>
+	    		<h5>TODOS LOS DERECHOS RESERVADOS 2014  ©POLYCHORON</h5>
+	            <div id="links-footer" class="clearfix">
+	                <ul class="clearfix">
+	                    <li><a href="#top">INICIO</a></li>
+	                    <li><a href="javascript:void(0)">|</a></li>
+	                    <li><a href="../">POLYCHORON</a></li>
+	                    <li><a href="javascript:void(0)">|</a></li>
+	                    <li><a href="../privacy.html">AVISO DE PRIVACIDAD</a></li>
+	                </ul>
+        		</div>
+        	</div>
 	    </div>
   	</body>
 </html>

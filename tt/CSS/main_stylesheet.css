@@ -605,3 +605,35 @@ h4{
 #links-footer a#pull{
 	display: none;
 }
+
+div.social_networks_container{
+	margin-left:auto;
+	margin-right:auto;
+	display: block;
+	margin-bottom: 20px;
+}
+
+#button_style_f{
+	margin-right:20px;
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	background: url('../../images/facebook.png') bottom;
+	text-indent: -99999px;
+}
+
+#button_style_f:hover, #button_style_f:active{
+	background-position: 0 0;
+}
+
+#button_style_t{
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	background: url('../../images/twitter.png') bottom;
+	text-indent: -99999px;
+}
+
+#button_style_t:hover, #button_style_t:active{
+	background-position: 0 0;
+}

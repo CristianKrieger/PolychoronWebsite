@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -5,15 +6,123 @@
 		<link type="text/css" rel="stylesheet" href="CSS/main_stylesheet.css"/>
 		<link type="text/css" rel="stylesheet" href="../fonts/stylesheet.css"/>
 		<title>Thunder Trials</title>
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
-		<script type="text/javascript" src="http://flesler-plugins.googlecode.com/files/jquery.scrollTo-1.4.2-min.js"></script>
-		<script type="text/javascript" src="http://flesler-plugins.googlecode.com/files/jquery.localscroll-1.2.7-min.js"></script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+		<script type="text/javascript" src="https://flesler-plugins.googlecode.com/files/jquery.scrollTo-1.4.2-min.js"></script>
+		<script type="text/javascript" src="https://flesler-plugins.googlecode.com/files/jquery.localscroll-1.2.7-min.js"></script>
 		<script>
 			$(document).ready(function(){
 		        $('#nav_links').localScroll({
 		           target:'body'
 		        });
+					
+				var form = document.getElementById('bgform');
+				if (form.attachEvent) {
+				    form.attachEvent("submit", processForm);
+				} else {
+				    form.addEventListener("submit", processForm);
+				}
 		    });
+			
+			function processForm(e) {
+			    if (e.preventDefault) e.preventDefault();
+		            $('#empty').fadeOut();
+		            $('#wrong').fadeOut();
+		            $('#finished').fadeOut();
+		            $('#nomatch').fadeOut();
+		            $('#fail').fadeOut();
+				var name, lastName, email, phone, password1, password2, program;
+				var errorField = false;
+				var errorPassField = false;
+				name=$("#nameinput").val();
+				email=$("#mailinput").val();
+				phone=$("#telephoneinput").val();
+				password1=$("#passwordinput").val();
+				password2=$("#passwordconfirminput").val();
+				program=$("#programinput").val();
+				
+				if(name==null || name=="" ||
+						email==null || email=="" ||
+						phone==null || phone=="" ||
+						password1==null || password1=="" ||
+						password2==null || password2=="" ||
+						program==null || program==""){
+				    $('#empty').fadeIn();
+				    return false;
+				}else{
+					var at_position=email.indexOf('@');
+					var dot_position=email.indexOf('.', at_position);
+					var email_size=email.length;
+					
+					if(!isEmail(email)||(at_position==-1)||(dot_position<(at_position+2))||(dot_position+2>email_size))
+						errorField=true;
+					if(password1.localeCompare(password2)!=0)
+						errorPassField=true;
+					//SEPARAR Y CHECAR NOMBRE
+					var space_position=name.indexOf(' ');
+					if(space_position==-1){
+						$('#wrong').fadeIn();
+						return false;
+					}
+					lastName=name.substring(space_position+1);
+					name=name.substring(0,space_position);
+					//CHECAR TELEFONO
+					//TODO
+					if(errorField==true){
+					    $('#wrong').fadeIn();
+					    return false;
+					}
+					if(errorPassField==true){
+					    $('#nomatch').fadeIn();
+					    return false;
+					}
+					
+					var url = $('#bgform').attr('action');
+					var semester, university;
+					semester = $('select[name=semestre]').val();
+					console.log ( semester );
+					university = $('select[name=universidad]').val();
+					console.log ( university );
+					var methodValue = "registro";
+								
+					
+					$.post( url, { 
+                           nombre: name,
+                           apellido: lastName,
+                           email: email, 
+                           password: password1,
+                           telefono: phone,
+                           carrera: program,
+                           semestre: semester,
+                           universidad: university,
+                           method: methodValue
+                     }, function( data ) {
+					    var obj = jQuery.parseJSON( data );
+		             	console.log(data);
+		             	if(obj){
+		             		console.log(obj);
+		             		if(obj.code){
+		             			console.log(obj.code);
+				             	if(obj.code==1){
+					             	$('#finished').fadeIn();
+									document.getElementById("bgform").reset();
+									return true;
+								}
+		             		}else{
+		             			console.log("NO CODE");
+		             		}
+		             	}else{
+		             		console.log("NO JSON");
+		             	}
+					 }, 'json');
+                     //posting.done();
+				}
+				$('#fail').fadeIn();
+				return false;
+			}
+			
+			function isEmail(email){
+        		return /^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*$/.test(email);
+			}
 		</script>
 	</head>
 	<body class="content">
@@ -59,7 +168,7 @@
 		    		<h2 class="subtitle">SELECCIÓN</h2>
 		    		<p class="black_text centered_text">
 		    			El proceso de selección de alumnos se realizará en base a tres criterios: técnico, creativo y negocios. El participante debe elegir el área de su mayor interés y deberá completar una serie de retos para demostrar que es el mejor. 
-		    			Estos desafíos buscan encontrar aquellos alumnos con la mayor disposición a emprender, las mejores capacidades como autodidácta y un talento innato. Por ello, en algunas ocasiones no es necesario que el participante requiera amplios conocimientos de la materia.
+		    			Estos desafíos buscan encontrar aquellos alumnos con la mayor disposición a emprender, las mejores capacidades como autodidacta y un talento innato. Por ello, en algunas ocasiones no es necesario que el participante requiera amplios conocimientos de la materia.
 		    			Se elegirán a los 20 mejor participantes por categoría en cada escuela.
 		    		</p>
 		    		<ul class="circle_list">
@@ -80,7 +189,7 @@
 		    		<p class="black_text centered_text">
 		    			Una vez que se han elegido a los 60 concursantes de cada universidad, comienza oficialmente el desarrollo de tu idea de negocio. En los siguiente días, deberás reunir un equipo de 3 personas (uno de cada categoría) a partir de los seleccionados; para ello,
 		    			te daremos acceso a una red social privada en la que podrás ver el trabajo de los otros durante los desafíos y comunicarte con ellos. Esta red social estará disponible en este sitio web y en la aplicación oficial del evento, donde también recibirás noticias del evento y serás notificado de 
-		    			los cursos, talleres y conferencias que hemos preparado para que puedas construir un producto increíble. Durante los meses consecutivos, deberás ponerte de acuerdo con tu equipo respecto a desarrollarán, comenzar la construcción de tu producto, buscar mentoría (si la necesitas) y prepararte para la final.
+		    			los cursos, talleres y conferencias que hemos preparado para que puedas construir un producto increíble. Durante los meses consecutivos, deberás ponerte de acuerdo con tu equipo respecto a que desarrollarán, comenzar la construcción de tu producto, buscar mentoría (si la necesitas) y prepararte para la final.
 		    		</p>
 		    		<h2 class="subtitle">CLAUSURA</h2>
 		    		<p class="black_text centered_text">
@@ -104,7 +213,7 @@
 		    		<p class="black_text centered_text">
 		    			El evento se realizará en paralelo en ambas sedes y tendrán sus eventos individuales; a excepción de la clausura, la cual se realizará en el ITESM Campus Estado de México.
 		    			La inauguración de los Thunder Trials se realizará con una conferencia impartida por uno de los emprendedores tecnológicos mexicanos más reconocidos: Ricardo Gómez Quiñones, fundador de Kaxan Media Group.
-		    			Te invitamos a asistir a esta ponencia donde además se ahodará en detalles respecto al evento (bases, premios, etc). 
+		    			Te invitamos a asistir a esta ponencia donde además se ahondará en detalles respecto al evento (bases, premios, etc). 
 		    		</p>
 		    		<img src="images/opening-banner.png" class="event"/>
 		    		<table>
@@ -186,22 +295,24 @@
 		    	<div class="parallax_div" id="third">
 		    		<div class="center-container">
 			    		<h1 class="title thundertrials-title">REGISTRO</h1>
-			    		<div id="bgform">
-					        <input id="nameinput" type="text" name="fname" placeholder="Nombre Completo">
-					        <input id="mailinput" type="text" name="fname" placeholder="Email">
-					        <input id="telephoneinput" type="text" name="fname" placeholder="Teléfono">
-					        <input id="passwordinput" type="text" name="fname" placeholder="Contraseña">
-					        <input id="passwordconfirminput" type="text" name="fname" placeholder="Confirmación de Contraseña">
+						<form id="bgform" action="https://www.polychoron.org/apps/polychoron/controller/servicios.php" method="post">
+							<input type="hidden" name="method" value="registro"/>
+					        <input id="nameinput" type="text" name="nombre" placeholder="Nombre y Apellido">
+					        <input type="hidden" name="apellido" value=""/>
+					        <input id="mailinput" type="text" name="email" placeholder="Email">
+					        <input id="telephoneinput" type="text" name="telefono" placeholder="Teléfono">
+					        <input id="passwordinput" type="password" name="password" placeholder="Contraseña">
+					        <input id="passwordconfirminput" type="password" name="confirmar_password" placeholder="Confirmación de Contraseña">
 							<div class="university-container">
 								<p class="label">Universidad</p>
-								<select name="university">
+								<select name="universidad">
 									<option value="ITESM-CEM" selected>ITESM CEM</option>
 									<option value="ITESM-TOL">ITESM TOL</option>
 								</select>
 							</div>
 							<div class="semester-container">
 								<p class="label">Semestre</p>
-								<select name="semester">
+								<select name="semestre">
 									<option value="1" selected>1</option>
 									<option value="2">2</option>
 									<option value="3">3</option>
@@ -217,11 +328,14 @@
 									<option value="13">Exatec</option>
 								</select>
 							</div>
-							<input id="programinput" type="text" name="fname" placeholder="Carrera (Sólo Siglas)">
-					        <div id="sendbutton">
-					        	<h4>Enviar</h4>
-					        </div>
-					    </div>
+							<input id="programinput" type="text" name="carrera" placeholder="Carrera (Sólo Siglas)">
+					        <input value="Enviar" type="submit" id="sendbutton">
+					    </form>
+					    <div style="display: none;" class="error" id="empty">Todos los campos son requeridos</div>
+					    <div style="display: none;" class="error" id="wrong">Campo con contenido invalido</div>
+					    <div style="display: none;" class="error" id="nomatch">Password no coincide</div>
+					    <div style="display: none;" class="error" id="fail">Error en servidor, por favor si no recibes un correo de confirmacion, envianos tus datos a info@polychoron.org</div>
+					    <div style="display: none;" class="success" id="finished">Registro satisfactorio</div>
 		    		</div>
 		    	</div>
 		    </div>

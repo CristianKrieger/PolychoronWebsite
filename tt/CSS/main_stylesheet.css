@@ -418,7 +418,7 @@ tr.odd {
 #nameinput{
 	width: 269px;
 	height: 37px;
-	margin: 0 15px;
+	padding: 0 15px;
 	position: absolute;
 	top: 25px;
 	left: 25px;
@@ -429,7 +429,7 @@ tr.odd {
 #mailinput{
 	width: 269px;
 	height: 37px;
-	margin: 0 15px;
+	padding: 0 15px;
 	position: absolute;
 	top: 76px;
 	left: 25px;
@@ -440,7 +440,7 @@ tr.odd {
 #telephoneinput{
 	width: 269px;
 	height: 37px;
-	margin: 0 15px;
+	padding: 0 15px;
 	position: absolute;
 	top: 127px;
 	left: 25px;
@@ -451,7 +451,7 @@ tr.odd {
 #passwordinput{
 	width: 269px;
 	height: 37px;
-	margin: 0 15px;
+	padding: 0 15px;
 	position: absolute;
 	top: 178px;
 	left: 25px;
@@ -462,7 +462,7 @@ tr.odd {
 #passwordconfirminput{
 	width: 269px;
 	height: 37px;
-	margin: 0 15px;
+	padding: 0 15px;
 	position: absolute;
 	top: 229px;
 	left: 25px;
@@ -489,7 +489,7 @@ select{
 div.university-container{
 	width: 269px;
 	height: 37px;
-	margin: 0 15px;
+	padding: 0 15px;
 	position: absolute;
 	top: 280px;
 	left: 25px;
@@ -501,7 +501,7 @@ div.university-container{
 div.semester-container{
 	width: 269px;
 	height: 37px;
-	margin: 0 15px;
+	padding: 0 15px;
 	position: absolute;
 	top: 331px;
 	left: 25px;
@@ -513,7 +513,7 @@ div.semester-container{
 #programinput{
 	width: 269px;
 	height: 37px;
-	margin: 0 15px;
+	padding: 0 15px;
 	position: absolute;
 	top: 382px;
 	left: 25px;
@@ -527,7 +527,11 @@ div.semester-container{
     position: absolute;
     top: 433px;
     left: 25px;
-    cursor: pointer;
+    background-color: transparent;
+    font-family:franchiseregular;
+	font-size: 30px;
+	line-height: 50px;
+	color:#FFFFFF;
 }
 
 h4{
@@ -535,6 +539,30 @@ h4{
 	font-size: 30px;
 	line-height: 50px;
 	color:#FFFFFF;
+}
+
+div.error{
+	width: 500px;
+	background-color: #FF0000;
+	color:#FFFFFF;
+	font-family:franchiseregular;
+	font-size: 30px;
+	line-height: 50px;
+	padding:10px;
+	display: block;
+	margin: 30px auto 0;
+}
+
+div.success{
+	width: 500px;
+	background-color: #44bbcc;
+	color:#FFFFFF;
+	font-family:franchiseregular;
+	font-size: 30px;
+	line-height: 50px;
+	padding:10px;
+	display: block;
+	margin: 30px auto 0;
 }
 
 /*

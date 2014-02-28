@@ -1,9 +1,8 @@
-
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-		<link type="text/css" rel="stylesheet" href="CSS/main_stylesheet.css"/>
+		<link type="text/css" rel="stylesheet" href="CSS/tt_stylesheet.css"/>
 		<link type="text/css" rel="stylesheet" href="../fonts/stylesheet.css"/>
 		<title>Thunder Trials</title>
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
@@ -14,7 +13,11 @@
 		        $('#nav_links').localScroll({
 		           target:'body'
 		        });
-					
+				
+				$('#links-footer').localScroll({
+		           target:'body'
+		        });
+		        
 				var form = document.getElementById('bgform');
 				if (form.attachEvent) {
 				    form.attachEvent("submit", processForm);
@@ -28,6 +31,7 @@
 		            $('#empty').fadeOut();
 		            $('#wrong').fadeOut();
 		            $('#finished').fadeOut();
+		            $('#registered').fadeOut();
 		            $('#nomatch').fadeOut();
 		            $('#fail').fadeOut();
 				var name, lastName, email, phone, password1, password2, program;
@@ -76,7 +80,14 @@
 					    return false;
 					}
 					
-					var url = $('#bgform').attr('action');
+					var sourceURL=document.URL;
+					console.log(sourceURL);
+					
+					var formURL=$('#bgform').attr('action');
+					var URLprefix = formURL.split("/tt/");
+					var url = URLprefix[0].concat(formURL);
+					console.log(url);
+					
 					var semester, university;
 					semester = $('select[name=semestre]').val();
 					console.log ( semester );
@@ -96,25 +107,33 @@
                            universidad: university,
                            method: methodValue
                      }, function( data ) {
-					    var obj = jQuery.parseJSON( data );
-		             	console.log(data);
-		             	if(obj){
+                     	if(typeof data =='object'){
+						    var obj = jQuery.parseJSON(JSON.stringify(data));
 		             		console.log(obj);
-		             		if(obj.code){
+			             	if(obj.code!=null){
 		             			console.log(obj.code);
 				             	if(obj.code==1){
+					             	console.log("registry suceeded.")
 					             	$('#finished').fadeIn();
 									document.getElementById("bgform").reset();
 									return true;
 								}
+								else if(obj.code==13){
+					             	$('#registered').fadeIn();
+									return false;
+								}else{
+									console.log("Registry not suceeded.")
+									$('#fail').fadeIn();
+								}
 		             		}else{
 		             			console.log("NO CODE");
+		             			$('#fail').fadeIn();
 		             		}
 		             	}else{
 		             		console.log("NO JSON");
+		             		$('#fail').fadeIn();
 		             	}
 					 }, 'json');
-                     //posting.done();
 				}
 				$('#fail').fadeIn();
 				return false;
@@ -128,10 +147,10 @@
 	<body class="content">
 		<div class="main_container">
 	        <div class="nav_bar_bg">
-				<div class="nav_bar">
-					<img class="nav-logo" src="images/txt-only-logo.png">
-					<ul class="nav_list" id="nav_links">
-						<li class="nav_item"><a class="nav_link" id="first_nav_link" href="#about">Evento</a></li><li class="nav_item"><a class="nav_link" href="#second">Sedes</a></li><li class="nav_item"><a class="nav_link" href="#calendar">Calendario</a></li><li class="nav_item"><a class="nav_link" href="#third">Registro</a></li><li class="nav_item"><a class="nav_link" href="../contact.php">Contacto</a></li>
+				<div class="nav_bar" id="nav_links">
+					<a href="#about"><img class="nav-logo" src="images/txt-only-logo.png"></a>
+					<ul class="nav_list">
+						<li class="nav_item"><a class="nav_link" id="first_nav_link" href="#second">Sedes</a></li><li class="nav_item"><a class="nav_link" href="#calendar">Calendario</a></li><li class="nav_item"><a class="nav_link" href="#third">Registro</a></li><li class="nav_item"><a class="nav_link" href="login.php">Participantes</a></li><li class="nav_item"><a class="nav_link" href="../contact.php">Contacto</a></li>
 					</ul>
 				</div>
 			</div>
@@ -334,6 +353,7 @@
 					    <div style="display: none;" class="error" id="empty">Todos los campos son requeridos</div>
 					    <div style="display: none;" class="error" id="wrong">Campo con contenido invalido</div>
 					    <div style="display: none;" class="error" id="nomatch">Password no coincide</div>
+					    <div style="display: none;" class="error" id="registered">Usuario registrado previamente. Por favor, utiliza el correo de confirmación e inicia sesión. Si no recibiste el correo, contáctanos en info@polychoron.org</div>
 					    <div style="display: none;" class="error" id="fail">Error en servidor, por favor si no recibes un correo de confirmacion, envianos tus datos a info@polychoron.org</div>
 					    <div style="display: none;" class="success" id="finished">Registro satisfactorio</div>
 		    		</div>

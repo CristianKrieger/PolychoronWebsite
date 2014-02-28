@@ -10,7 +10,7 @@ html, body{
 }
 
 body.content{
-	background: #dce6e8;
+	background: #f5f5f5;
 }
 
 div.main_container{
@@ -39,6 +39,7 @@ div.nav_bar_bg{
 	left:0;
 	position:fixed;
 	z-index:100;
+	min-width: 780px;
 }
 
 div.nav_bar{
@@ -664,4 +665,78 @@ div.social_networks_container{
 
 #button_style_t:hover, #button_style_t:active{
 	background-position: 0 0;
+}
+
+/*
+ *
+ * LOGIN
+ *  
+ */
+
+#login{
+	background: transparent url(../images/login_bg.png) 50% 0 no-repeat fixed;
+	min-height:300px;
+	padding: 10% 5%;
+}
+
+#bgform_login {
+	width: 350px;
+	height: 325px;
+	background-image: url("../images/login-background.png");
+	position: relative;
+	display: block;
+	margin: 0px auto;
+}
+
+#login_email{
+	width: 269px;
+	height: 37px;
+	padding: 0 15px;
+	position: absolute;
+	top: 97px;
+	left: 25px;
+	border: hidden;
+	outline: 0;
+}
+
+#login_password{
+	width: 269px;
+	height: 37px;
+	padding: 0 15px;
+	position: absolute;
+	top: 148px;
+	left: 25px;
+	border: hidden;
+	outline: 0;
+}
+
+#login_text{
+	width: 269px;
+	height: 37px;
+	padding: 0 15px;
+	position: absolute;
+	top: 199px;
+	left: 25px;
+	border: hidden;
+	outline: 0;
+}
+
+#login_button{
+	width: 300px;
+    height: 51px;
+	padding: 0 15px;
+	position: absolute;
+	top: 250px;
+	left: 25px;
+	border: hidden;
+	outline: 0;
+    background-color: transparent;
+    font-family:franchiseregular;
+	font-size: 30px;
+	line-height: 50px;
+	color:#FFFFFF;
+}
+
+div.login_wrapper{
+	min-width: 500px;
 }
